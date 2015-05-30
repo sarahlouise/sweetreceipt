@@ -1,0 +1,11 @@
+<h1><%= current_user.email %>'s Reciepts </h1>
+
+<div>  	
+	<ul>
+	  <% @receipts.each do |receipt| %>
+</div>
+			<li>
+			  <strong><%= receipt.title %></strong>  |  <%= link_to "See Receipt", receipt_path(current_user) %>
+			</li>	
+  	<% end %>
+	</ul>
