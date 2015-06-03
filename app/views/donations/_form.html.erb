@@ -1,0 +1,10 @@
+
+    <h1 class="text-center text-primary">Add Items</h1>
+    <%= simple_form_for(@donation, url: create_donation_path, html: { class: 'form-horizontal' }) do |f| %>
+    <%= f.input :item_category, collection: donation_item_category %> 
+    <%= f.input :item_type %> 
+    <%= f.input :value %> 
+    <%= f.button :submit, "Add Item" %>
+    <%end%>
+  </div>
+</div>

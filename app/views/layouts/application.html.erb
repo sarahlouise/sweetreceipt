@@ -9,37 +9,41 @@
 </head>
 <body>
 <!-- START NAV -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-fixed-top">
 	<div class="container-fluid">
+		<div class="nav-transparency"></div>
 		<div class="navbar-header">
 		<!-- NAVBAR LOGO -->
-			<a class="navbar-brand" href="#">
-				<img alt="Sweet Receipt Logo" src="...">
-			</a>
+			<%= link_to(image_tag("https://s3-us-west-2.amazonaws.com/sweet-receipt/SR-Images/SR-logo-trans.png"), root_path, :class => "navbar-brand") %>
 		</div>
 		<!-- PULL RIGHT LINKS AND DROPDOWNS -->
 		<ul class="nav navbar-nav navbar-right pull-right">
-		       <li><a href="#">About</a></li>
-		       <li class="dropdown">
-		         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		      <li><a href="#">About</a></li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		         	<% if user_signed_in? %>
 		         	<%= current_user.email %> 
-		         <ul class="dropdown-menu navbar-right" role="menu">	           	
-		     		<li> <%= link_to 'My Receipts', receipts_path%></li>
-		     		<li><%= link_to "Create Receipt", new_receipt_path %></li>
-		     		<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+		         	</a>
+		         		<ul class="dropdown-menu navbar-right" role="menu">	           	
+					     		<li> <%= link_to 'My Receipts', receipts_path%></li>
+					     		<li><%= link_to "Create Receipt", new_receipt_path %></li>
+					     		<li><a href="#">Dashboard</a></li>
+					     		<li class="divider"></li>
+					     		<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+		     				</ul>
+
 		         	<% else %> 
-		         		<%= link_to 'Login', new_user_session_path %> <span class="caret"></span></a>
-		         		<%= link_to 'Sign Up', new_user_registration_path %> <span class="caret"></span></a>
+		         			<p>Start Here</p>
+		         	    <ul class="dropdown-menu navbar-right" role="menu">	           	
+			         		<li><%= link_to 'Login', new_user_session_path %> <span class="caret"></span></a></li>
+			         		<li><%= link_to 'Sign Up', new_user_registration_path %> 
+		         		</ul>
+		         		
 		         	<% end %>
-		           <li><a href="#">Dashboard</a></li>
-		           <li><a href="#">Another action</a></li>
-		           <li><a href="#">Something else here</a></li>
-		           <li class="divider"></li>
-		           <li><a href="#">Separated link</a></li>
 		         </ul>
 		       </li>
 		     </ul> 
+		     <!-- </div> close .nav-transparency -->
 		</div> <!-- close .container-fluid -->
 	</div>
 </nav>
@@ -50,7 +54,13 @@
     <p class="alert"><%= alert %></p>
 </div>
 
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+
 <%= yield %>
+
+  </div>
+</div>
 
 <footer>
 </footer>

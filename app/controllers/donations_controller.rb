@@ -1,4 +1,6 @@
 class DonationsController < ApplicationController
+# before_action :all_donations, only [:index, :create]
+# respond_to :html, :js
 
 def index
 	@donations = Donation.all
