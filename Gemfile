@@ -12,6 +12,7 @@ gem 'httparty'
 gem 'figaro'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'

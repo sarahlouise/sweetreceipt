@@ -15,3 +15,26 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$font-stack: Helvetica, sans-serif;
+$dark-color: #41474E;
+$font-color: #f8f8f8;
+$logo-color: #e27666;
+$sweetreceipt-white: #f8f8f8;
+
+nav {
+	color: $font-color;
+		img {
+			max-height: 80px;
+			margin-left: 30px;
+			}
+	}
+
+.btn-info {
+	background-color: $logo-color;
+}
+	
+.nav-transparency {
+	background-color: $dark-color;
+	opacity: 0.5;
+}
