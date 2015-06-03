@@ -11,9 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'httparty'
 gem 'figaro'
 gem 'devise'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 group :development, :test do
   gem 'byebug'
