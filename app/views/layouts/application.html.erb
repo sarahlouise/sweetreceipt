@@ -7,6 +7,46 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- START NAV -->
+
+<nav class="ui inverted menu">
+	<a class="header item" href="#">Sweet Receipt</a>
+<!-- <nav class="ui inverted menu">
+	<a class="header item" href="#">SWEET RECEIPT</a>
+		<div class="ui pointing dropdown link item"> -->
+			<!-- <a class="item" href="#">Deals</a>
+			<i class="dropdown icon"></i>
+			  <div class="menu">
+				<div class="dropdown menu">
+					<a class="item">Deal1</a>
+					<a class="item">Deal2</a>
+				</div>
+			  </div>
+		</div>
+			<a class="item" href="#">Coupons</a>
+			<a class="item" href="#">Browse</a>
+			<a class="item" href="#">Forums</a>
+			<div class="item"> 
+				<div class="ui icon input">
+				<input type="text" placeholder="Search...">
+				<i class="search icon"></i>
+			</div>
+		</div>
+	 -->	
+	<div class="ui selection dropdown">
+    	<input type="hidden" name="gender">
+    		<div class="default text">Gender</div>
+    		<i class="dropdown icon"></i>
+   				<div class="menu">
+      				<div class="item" data-value="1">Male</div>
+      				<div class="item" data-value="0">Female</div>
+    			</div>
+  	</div>
+
+</nav>
+<!-- NAV BAR ENDS HERE -->
+
+
 	<div>
 		<p class="notice"><%= notice %></p>
 	    <p class="alert"><%= alert %></p>

@@ -1,3 +1,35 @@
 <h1><%= @receipt.title %></h1>
 
-<h3>Add Items:</h3>
+<!-- All Donation Items On Current Receipt -->
+	<table class="ui striped table">
+	  <thead>
+	    <tr>
+	      <th>Item Category</th>
+	      <th>Item Type</th>
+	      <th>Value</th>
+	      <th>Edit/Delete</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  <% @receipt.donations.each do |donation| %>
+	    <tr>
+			<td class="collapsing"> <%= donation.item_category %></td>
+			<td class="collapsing"> <%= donation.item_type %></td>
+			<td class="collapsing"> <%= donation.value %></td>
+			<td class="collapsing">	<%= link_to(delete_donation_path, method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn') do %> <i class="remove circle icon"></i></td>	  <%end%>
+		 </tr>
+	  </tbody>
+	  <%end%>
+	</table>
+
+	<!-- Eventually have expanding form for new item -->
+	<!-- <button class = "ui button">Add Another Item</button> -->
+
+	<!-- Validate all information & Submit Donation -->
+	<!-- <button class = "ui button">Finalize Donation</button> -->
+
+	<br>
+	<%= link_to "Add Donation Item", new_donation_path, class: "ui button" %>      
+	<%= link_to "Home", root_path, class: "ui button" %>      
+	<%= link_to "All Receipts", receipts_path, class: "ui button" %>
+	<br>

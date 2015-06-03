@@ -1,0 +1,22 @@
+<h1>Add A Donation Item</h1>
+
+<%= form_for @donation, url: create_donation_path do |f| %>
+
+  <div>
+     <%= f.label :item_category %> 
+     <%= f.text_field :item_category %>
+  </div>
+
+  <div>
+     <%= f.label :item_type %> 
+     <%= f.text_field :item_type %>
+  </div>  
+
+  <div>
+     <%= f.label :value %> 
+     <%= f.number_field :value %>
+  </div>
+  <%= f.submit "Add Item" %>
+  
+<% end %>
+

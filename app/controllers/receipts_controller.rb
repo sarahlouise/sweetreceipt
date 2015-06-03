@@ -14,7 +14,6 @@ end
 
 def create
 	@receipt = current_user.receipts.new(receipt_params)
-
 	if @receipt.save
 		redirect_to receipt_path(@receipt)
 	else

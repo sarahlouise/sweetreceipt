@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529223201) do
+ActiveRecord::Schema.define(version: 20150601194141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: :cascade do |t|
+    t.string   "item_category"
+    t.string   "item_type"
+    t.decimal  "value"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "receipt_id"
+  end
+
+  add_index "donations", ["receipt_id"], name: "index_donations_on_receipt_id", using: :btree
 
   create_table "receipts", force: :cascade do |t|
     t.string   "title"
@@ -43,5 +54,6 @@ ActiveRecord::Schema.define(version: 20150529223201) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "donations", "receipts"
   add_foreign_key "receipts", "users"
 end
