@@ -38,10 +38,10 @@ end
 # end
 
 def destroy
-	@receipt = Receipt.find(params[:receipt_id])
-	@donation = @receipt.donations.find(params[:id])
+	@donation = Donation.find(params[:id])
+	receipt_id = @donation.receipt_id
 	@donation.destroy
-	redirect_to donations_path
+	redirect_to receipt_path({id: receipt_id})
 end
 
 private

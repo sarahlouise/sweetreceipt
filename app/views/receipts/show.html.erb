@@ -17,7 +17,7 @@
 			<td> <%= donation.item_category %></td>
 			<td> <%= donation.item_type %></td>
 			<td> <%= donation.value %></td>
-			<td>	<%= link_to(delete_donation_path, method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn') do %> <i class="glyphicon glyphicon-remove"></i></td>	  <%end%>
+			<td> <%= link_to "Delete", delete_donation_path(@receipt, donation), method: :delete, data: {confirm: "Are you sure?"} %></td>->
 		 </tr>
 	  </tbody>
 	  <%end%>
@@ -31,7 +31,7 @@
 
 	<br>
 	<div class="center-align">
-	<%= link_to "Add Donation Item", new_donation_path, remote: true, class: "btn btn-info" %>      
+	<%= link_to "Add Donation Item", new_donation_path, class: "btn btn-info" %>      
 	<%= link_to "Home", root_path, class: "btn btn-info" %>      
 	<%= link_to "All Receipts", receipts_path, class: "btn btn-info" %>
 	</div>
