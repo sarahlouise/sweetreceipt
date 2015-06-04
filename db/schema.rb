@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603185719) do
+ActiveRecord::Schema.define(version: 20150604035556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150603185719) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "receipt_id"
+    t.integer  "qty"
   end
 
   add_index "donations", ["receipt_id"], name: "index_donations_on_receipt_id", using: :btree
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150603185719) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "pending"
   end
 
   add_index "receipts", ["user_id"], name: "index_receipts_on_user_id", using: :btree
@@ -57,6 +59,8 @@ ActiveRecord::Schema.define(version: 20150603185719) do
     t.string   "zip"
     t.string   "longitude"
     t.string   "latitude"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
