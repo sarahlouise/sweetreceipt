@@ -2,12 +2,21 @@
   <div class="col-md-4 col-md-offset-4">
     <h1 class="text-center text-primary">Add Items</h1>
     <%= simple_form_for(@donation, url: create_donation_path, html: { class: 'form-horizontal' }) do |f| %>
-    <%= f.input :item_category, collection: donation_item_category %> 
-    <%= f.input :item_type %> 
+
+    <%= f.input :item_category, collection: donation_category%> 
+
+    <!-- collection: donation_items.map do { |elem| el[:item_category] } -->
+    <!-- item category must be unique  -->
+
+    <%= f.input :item_type, collection: dontation_item %> 
+    <!-- collection: donation_items.map do { |elem| el[:item_type] } -->
+    <!-- if the associated item category is selected above -->
+
     <%= f.input :value %> 
+    <!-- collection: donation_items.map do {|elem| el[:value] } -->
+    <!-- if the item category and the item time are selected above -->
+
     <%= f.button :submit, "Add Item" %>
     <%end%>
   </div>
 </div>
-
-
