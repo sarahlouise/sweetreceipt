@@ -5,9 +5,9 @@
 	  <% current_user.receipts.each do |receipt| %>
 	  <!-- for current_user.receipts do |receipt| -->
 	  <!-- @receipts.each do |receipt| -->
-</div>
 			<li>
 			  <strong><%= receipt.title %></strong>  |  <%= link_to "See Receipt", receipt_path(receipt) %>
 			</li>	
   	<% end %>
 	</ul>
+</div>
