@@ -22,8 +22,7 @@ def create
 end
 
 private
-def receipt_params
-	params.require(:receipt).permit(:title)
-end
-
+	def receipt_params
+		params.require(:receipt).permit(:title, :pending)
+	end
 end

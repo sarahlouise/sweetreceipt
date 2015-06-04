@@ -1,9 +1,29 @@
 <h1>Home</h1>
-User Signed-In Links:
-<ul>
-	<li><%= link_to "All Receipts", receipts_path %></li>
-	<li><%= link_to "Create Receipt", new_receipt_path %></li>
-	<li><%= link_to "Change your password", edit_user_registration_path %></li>
-</ul>
+
+
+
+if logged in?
+render dashboard
+
+Total Receipts
+	(create a helper method to return receipts with pending value == false)
+
+TOTAL DONATIONS IN 2015
+	submitted_receipts
+	Receipt.where(:pending == true)
+	 --> may need to pass in " , paras[current_user]"
+
+	 EXAMPLE: Client.where("orders_count = ?", params[:orders])
+
+	donation.value =	
+		(create helper method for total value of the receipts)
+LINK: SEE PAST YEARS
+
+EXAMPLE: Client.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
+Receipt.where(created_at: ??current year??)
+	
+PENDING RECEIPTS
+	Method to return all receipts with pending value == true 
+
 
 
