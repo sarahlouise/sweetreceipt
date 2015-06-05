@@ -1,13 +1,11 @@
-<h1><%= current_user.email %>'s Reciepts </h1>
+<h1 text-primary><%= current_user.first_name %>'s Reciepts </h1>
 
 <div>  	
 	<ul>
 	  <% current_user.receipts.each do |receipt| %>
-	  <!-- for current_user.receipts do |receipt| -->
-	  <!-- @receipts.each do |receipt| -->
-			<li>
-			  <strong><%= receipt.title %></strong>  |  <%= link_to "See Receipt", receipt_path(receipt) %>
-			</li>	
+		<li>
+		  <strong><%= receipt.title %></strong>  |  <%= link_to "See Receipt", receipt_path(receipt) %>
+		</li>
+	</ul>	
   	<% end %>
-	</ul>
 </div>

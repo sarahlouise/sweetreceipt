@@ -1,29 +1,76 @@
-<h1>Home</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sweet Receipt</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/static_pages.css">
+  </head>
 
+  <body id="home">
 
-if logged in?
-render dashboard
+    <div class="site-wrapper">
 
-Total Receipts
-	(create a helper method to return receipts with pending value == false)
+      <div class="site-wrapper-inner">
 
-TOTAL DONATIONS IN 2015
-	submitted_receipts
-	Receipt.where(:pending == true)
-	 --> may need to pass in " , paras[current_user]"
+        <div class="cover-container">
 
-	 EXAMPLE: Client.where("orders_count = ?", params[:orders])
+          <div class="masthead clearfix">
+            <div class="inner">
+              <!-- <h3 class="masthead-brand"> -->
+              <!-- </h3> -->
+              <nav>
+               <!--  <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul> -->
+              </nav>
+            </div>
+          </div>
 
-	donation.value =	
-		(create helper method for total value of the receipts)
-LINK: SEE PAST YEARS
+          <div class="inner cover">
+          <img id="home-logo" src="https://s3-us-west-2.amazonaws.com/sweet-receipt/SR-Images/SR-logo-trans.png">
+            <h1 class="heading-logo">Sweet Receipt</h1>
+            <p class="lead">Maximize Your Donation-Based Tax Deductions.</p>
+            <p class="lead">
+              <% if user_signed_in? %>
+              <%= link_to "My Account", new_receipt_path, class: "btn btn-lg btn-info" %>
+              <%= link_to "Create Receipt", new_receipt_path, class: "btn btn-lg btn-info" %>
+              <% else %> 
+              <%= link_to "Sign Up!", new_user_registration_path, class: "btn btn-lg btn-info" %>
+              <% end %>
+            </p>
+          </div>
 
-EXAMPLE: Client.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
-Receipt.where(created_at: ??current year??)
-	
-PENDING RECEIPTS
-	Method to return all receipts with pending value == true 
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
 
+        </div>
 
+      </div>
 
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

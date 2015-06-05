@@ -18,23 +18,84 @@
 
 $font-stack: Helvetica, sans-serif;
 $dark-color: #41474E;
-$font-color: #f8f8f8;
-$logo-color: #e27666;
-$sweetreceipt-white: #f8f8f8;
+$font-color: #f5f2ec;
+$logo-color: #5ecfcc;
 
 nav {
 	color: $font-color;
 		img {
-			max-height: 80px;
-			margin-left: 30px;
+			max-height: 150%;
+			margin-top: 15px;
+			// margin-left: 30px;
 			}
+	a {
+		color: $font-color;
 	}
+
+	p {
+		margin-bottom: 0px;
+	}
+	}
+
+body {
+	color: $dark-color;
+}
+
+
+.lead {
+	color: #f5f2ec;
+	margin-bottom: 20px;
+}
+
+.acct-btn {
+	border: 1px solid $font-color;
+	border-radius: 30px;
+	margin-top: 15px;
+
+}
+
+.btn {
+	margin-top: 20px;
+}
+
+.control-label {
+	color: $font-color;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  // border: 2px #333 solid;
+  padding-bottom: 10px;
+
+  }
 
 .btn-info {
 	background-color: $logo-color;
+	border-color: $logo-color;
+}
+
+.btn-info > a :hover {
+	shadow: 0 1px 3px rgba(0,0,0,.5);
+	border-color: $logo-color;
+
 }
 	
-.nav-transparency {
-	background-color: $dark-color;
-	opacity: 0.5;
+.trans {
+	background-color: #333;
+	opacity: 0.5; 
+	z-index: 0;
+	height: 81px;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+	margin-left: 15px;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: 15px;
+}
+
+.text-primary {
+	margin-top: 100px;
+	color: $font-color;
 }

@@ -1,9 +1,9 @@
-<h1 class="text-center text-primary">Create A New Receipt</h1>
+<h1 class="text-center text-primary">Create A Donation Receipt</h1>
 
 <div>
 	<%= simple_form_for(@receipt, html: { class: 'form-horizontal' }) do |f| %>
 		<%= f.input :title, hint: "Choose an identifing name, ex: 'Kid's Winter Clothes Donations'" %> 
-		<%= f.button :submit, "Create Receipt!" %>
+		<%= f.button :submit, "Create Receipt!", class: "btn btn-lg btn-info" %>
 	<%end%>
 </div>
 

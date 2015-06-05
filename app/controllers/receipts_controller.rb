@@ -21,6 +21,12 @@ def create
 	end
 end
 
+def update
+	@receipt = Receipt.find(params[:id])
+	@receipt.update_attributes(:pending => false)
+	redirect_to root_path
+end
+
 private
 	def receipt_params
 		params.require(:receipt).permit(:title, :pending)
