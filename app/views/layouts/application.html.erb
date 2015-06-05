@@ -6,27 +6,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//use.typekit.net/oyn5bty.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
 <!-- START NAV -->
+<nav class="navbar navbar-fixed-top trans">
+</nav>
+
 <nav class="navbar navbar-fixed-top">
 	<div class="container-fluid">
-		<div class="nav-transparency"></div>
-		<div class="navbar-header">
+		<!-- <div class="nav navbar-nav"> -->
 		<!-- NAVBAR LOGO -->
-			<%= link_to(image_tag("https://s3-us-west-2.amazonaws.com/sweet-receipt/SR-Images/SR-logo-trans.png"), root_path, :class => "navbar-brand") %>
-		</div>
+			<%= link_to(image_tag("https://s3-us-west-2.amazonaws.com/sweet-receipt/SR-Images/SR-logo-horizontal.png"), root_path, :class => "navbar-brand") %>
+		<!-- </div> -->
 		<!-- PULL RIGHT LINKS AND DROPDOWNS -->
 		<ul class="nav navbar-nav navbar-right pull-right">
-		      <li><a href="#">About</a></li>
 		      <li class="dropdown">
-		        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		        <a href="#" class="dropdown-toggle acct-btn" data-toggle="dropdown" role="button" aria-expanded="false">
 		         	<% if user_signed_in? %>
-		         	<%= current_user.email %> 
+		         	<%= "My Account" %> 
 		         	</a>
 		         		<ul class="dropdown-menu navbar-right" role="menu">	           	
 					     		<li> <%= link_to 'My Receipts', receipts_path%></li>
 					     		<li><%= link_to "Create Receipt", new_receipt_path %></li>
+					     		<li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
 					     		<li><a href="#">Dashboard</a></li>
 					     		<li class="divider"></li>
 					     		<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
@@ -64,6 +68,8 @@
 
 <footer>
 </footer>
+
+
 
 </body>
 </html>

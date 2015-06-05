@@ -7,4 +7,11 @@ class Receipt < ActiveRecord::Base
   validates :title, presence: true
   validates :title, uniqueness: true
 
+
+  def total_value
+  	total_value = 0
+  	self.donations.each { |donation| total_value += donation.value }
+  	total_value.to_f
+  end
+
 end

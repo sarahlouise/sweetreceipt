@@ -1,49 +1,32 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <h1 class="text-center text-primary"><%= @receipt.title %></h1>
-<!-- All Donation Items On Current Receipt -->
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th>Item Category</th>
-	      <th>Item Type</th>
-	      <th>Value</th>
-	      <th>Edit/Delete</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  <% @receipt.donations.each do |donation| %>
-	    <tr>
-			<td> <%= donation.item_category %></td>
-			<td> <%= donation.item_type %></td>
-			<td> <%= donation.value %></td>
-			<td> <%= link_to "Delete", delete_donation_path(@receipt, donation), method: :delete, data: {confirm: "Are you sure?"} %></td>->
-		 </tr>
-	  </tbody>
-	  <%end%>
-	</table>
+<h1 class="text-center text-primary"><%= @receipt.title %></h1>
 
-	<!-- Eventually have expanding form for new item -->
-	<!-- <button class = "ui button">Add Another Item</button> -->
+<table class="table table-striped"><!-- All Donation Items On Current Receipt -->
+  <thead>
+    <tr>
+      <th>Item Category</th>
+      <th>Item Type</th>
+      <th>Value</th>
+      <th>Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @receipt.donations.each do |donation| %>
+    <tr>
+		<td> <%= donation.item_category %></td>
+		<td> <%= donation.item_type %></td>
+		<td> <%= donation.value %></td>
+		<td> <%= link_to "Delete", delete_donation_path(@receipt, donation), method: :delete, data: {confirm: "Are you sure?"} %></td>->
+	</tr>
+  </tbody>
+  <% end %>
+</table> <!-- End dontation items on current receipt -->
 
-	<!-- Validate all information & Submit Donation -->
-	<!-- <button class = "ui button">Finalize Donation</button> -->
+<%= link_to "Add Donation Item", new_donation_path, class: "btn btn-info btn-lg " %>  
+<br>
+<br>
 
-	<br>
-	<div class="center-align">
-	<%= link_to "Add Donation Item", new_donation_path, class: "btn btn-info" %>      
-	<%= link_to "Home", root_path, class: "btn btn-info" %>      
-	<%= link_to "All Receipts", receipts_path, class: "btn btn-info" %>
-	</div>
-
-	<!-- AJAX FOR ADDING DONATION ITEMS-->
-	<div id="task-form" style="display:none;">
-		
-
-	</div>
-
-
-
-
-	</div>
+<div class="center-align">
+<%= form_for @receipt, method: "patch" do |f| %>
+	<%= f.submit "Submit Receipt", class: "btn btn-lg btn-info" %>
+<%end%>
 </div>

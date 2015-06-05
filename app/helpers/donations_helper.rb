@@ -16,6 +16,11 @@ module DonationsHelper
 	  arr.uniq()
 	end
 
+# if @donation.item_category == "Men's Clothing" 
+# 	dontation_item.map do |elem| 
+# 			if elem[:item_category == "Men's Clothing"]
+# 				arr.push({elem[:item_type], elem[:value]})
+
  	def donation_items
 		[
 			{item_category: "Men's Clothing", item_type: "Shirt", value: [2.5...12]},
@@ -51,7 +56,7 @@ module DonationsHelper
 			{item_category: "Household Goods", item_type: "Throw Rug", value: [1.5...12]},
 			{item_category: "Household Goods", item_type: "Color TV", value: [75...225]},
 			{item_category: "Household Goods", item_type: "Kitchen Set", value: [35...170]},
-			{item_category: "Household Goods", item_type: "Bedroom Set", value: [5...170]}
+			{item_category: "Household Goods", item_type: "Bedroom Set", value: [40...170]}
 		]
 	end
 
